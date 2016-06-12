@@ -3,7 +3,7 @@
 #
 # Requires AWS plugin: https://aws.amazon.com/powershell/
 # Set-AWSCredentials -AccessKey <access key> -SecretKey <secret key> -Storeas <profile name>
-# Full instructions found i-script-stuff.electric-horizons.com/<>
+# Full instructions found http://i-script-stuff.electric-horizons.com/?p=43&preview=true
 #
 #
 
