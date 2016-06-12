@@ -7,7 +7,7 @@
 #
 #
 
-#Just a quick add for powershell 3.0 and older:
+#Just a quick check for powershell 3.0 and older:
 if($PSVersionTable.PSVersion.Major -ge 4) {
 Import-Module AWSPowerShell
 } else {
@@ -63,7 +63,7 @@ Set-AWSCredentials -ProfileName $profile
 $region_list = Get-AWSRegion | select -expandproperty Region
 
 	foreach($region in $region_list) {
-	$Instance_list = (Get-EC2Instance -region $region).instances
+	$Instance_list = Get-EC2Instance -region $region |select -expandproperty instances
 
 	$VPC_list = Get-EC2Vpc -Region $region
 		foreach ($VPC in $VPC_list) {
@@ -75,6 +75,7 @@ $region_list = Get-AWSRegion | select -expandproperty Region
             $Public_ip = $_.PublicIpAddress
 			$Power_State = $_.State.Name
             $SecurityGroups = $_.SecurityGroups.GroupName
+			echo "$Profile,$Region,$Instance_name,$Instance_id,$InstanceType,$Power_State,$Private_ip,$Public_ip,$SecurityGroups"
 			echo """$Profile"",""$Region"",""$Instance_name"",""$Instance_id"",""$InstanceType"",""$Power_State"",""$Private_ip"",""$Public_ip"",""$SecurityGroups""" >> $csv_tmp_path
 			echo "<tr><td>$Profile</td><td>$Region</td><td>$Instance_name</td><td>$Instance_id</td><td>$InstanceType</td><td>$Power_State</td><td>$Private_ip</td><td>$Public_ip</td><td>$SecurityGroups</td></tr>" >> $website_tmp_path
 			}
