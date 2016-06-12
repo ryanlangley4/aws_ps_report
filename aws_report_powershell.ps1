@@ -24,8 +24,6 @@ $website_tmp_path = ".\awsreport.tmp"
 $csv_tmp_path = ".\awscsvreport.tmp"
 $csv_path = "C:\inetpub\awsreport.csv"
 
-
-
 echo "<html>
 	  <head>
 	  <title>AWS Report</title>
