@@ -19,10 +19,10 @@ $profile_list = ("Example_1")
 
 
 #Path configs
-$website_path = "C:\inetpub\awsreport.html"
+$website_path = "C:\inetpub\wwwroot\awsreport.html"
 $website_tmp_path = ".\awsreport.tmp"
 $csv_tmp_path = ".\awscsvreport.tmp"
-$csv_path = "C:\inetpub\awsreport.csv"
+$csv_path = "C:\inetpub\wwwroot\awsreport.csv"
 
 echo "<html>
 	  <head>
